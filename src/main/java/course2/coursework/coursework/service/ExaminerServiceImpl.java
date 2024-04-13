@@ -15,9 +15,9 @@ public class ExaminerServiceImpl implements ExaminerService{
         this.questionService = questionService;
     }
 
-    public Collection<Question> getQuestions(){
+    public Collection<Question> getQuestions(int amount){
         Collection<Question> randomQuestions = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < amount; i++) {
             randomQuestions.add(questionService.getRandomQuestion());
         }
         return randomQuestions;

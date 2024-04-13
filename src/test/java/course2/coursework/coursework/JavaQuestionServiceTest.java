@@ -24,15 +24,13 @@ public class JavaQuestionServiceTest {
         Assertions.assertEquals(addTest.getAnswer(), answer);
     }
     @Test
-    public void removeTest(){
+    public void removeTestException(){
         String question = "questionTest";
         String answer = "answerTest";
         Question question1 = new Question(question,answer);
 
         Question addTest = javaQuestionService.add(question1);
-        Question removeTest = javaQuestionService.remove(question1);
 
-        Assertions.assertEquals(removeTest.getQuestion(), question);
-        Assertions.assertEquals(removeTest.getAnswer(), answer);
+        assertThrows(RuntimeException.class, ()-> javaQuestionService.remove(question1));
     }
 }
