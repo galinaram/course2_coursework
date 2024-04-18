@@ -27,6 +27,7 @@ public class JavaQuestionService {
         if(questions.contains(q)) {
             throw new RuntimeException("такой вопрос уже есть");
         }
+        questions.add(q);
         return q;
     }
     public Question remove (Question question){
